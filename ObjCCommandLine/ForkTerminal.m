@@ -62,6 +62,7 @@
         dispatch_async(dispatch_queue_create("Shell Wait Thread", DISPATCH_QUEUE_CONCURRENT), ^(void) {
             int status = 0;
             waitpid(self->childProcessID, &status, 0);
+            [self.delegate processStarted:self];
             self.terminationStatus = WEXITSTATUS(status);
 
             ssize_t outfdSize = PIPE_SIZE;

@@ -172,6 +172,7 @@ static BOOL         CMD;
         void(^block)(void) = ^{
             [self.task startProcess];
             while (!self.task.finish) {
+                dispatch_semaphore_signal(self->sem);
                 [self->runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             }
         };
@@ -199,7 +200,7 @@ static BOOL         CMD;
 
 #pragma mark - Private
 - (void)processStarted:(TerminalBase *)wrapper {
-
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
 }
 
 - (void)processFinished:(TerminalBase *)wrapper withTerminationStatus:(int)resultCode {

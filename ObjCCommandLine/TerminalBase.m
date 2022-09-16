@@ -121,8 +121,8 @@
 
 - (void)cleanup {
     if (!stdoutEmpty || !stderrEmpty) { return; }
-    [self.delegate processFinished:self withTerminationStatus:self.terminationStatus];
     self.finish = YES;
+    [self.delegate processFinished:self withTerminationStatus:self.terminationStatus];
 }
 
 @end
