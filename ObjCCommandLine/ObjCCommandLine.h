@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char ObjCCommandLineVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ObjCCommandLine/PublicHeader.h>
 
-#import <ObjCCommandLine/ObjCArgumentParser.h>
-#import <ObjCCommandLine/ObjCShell.h>
-#import <ObjCCommandLine/ObjCAppleScript.h>
-#import <ObjCCommandLine/NSFileHandle+isReadableAddon.h>
+#import <JoJoObjCCommandLine/ObjCArgumentParser.h>
+#import <JoJoObjCCommandLine/ObjCShell.h>
+#import <JoJoObjCCommandLine/ObjCAppleScript.h>
+#import <JoJoObjCCommandLine/NSFileHandle+isReadableAddon.h>
