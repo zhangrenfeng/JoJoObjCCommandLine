@@ -36,7 +36,7 @@
         dispatch_async(dispatch_queue_create("TTY Shell Wait Thread", DISPATCH_QUEUE_CONCURRENT), ^(void) {
             int status = 0;
             waitpid(self->childProcessID, &status, 0);
-            [self.delegate processStarted:self];
+//            [self.delegate processStarted:self];
 //            sleep(2);
             self.terminationStatus = WEXITSTATUS(status);
             self->taskDidTerminate = YES;
